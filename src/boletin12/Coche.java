@@ -4,9 +4,19 @@ package boletin12;
 
 public class Coche {
 
-    protected String matricula;
-    private int rodas;
-    
+    private String matricula;
 
+    public Coche() {}
 
+    public Coche(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }    
 }

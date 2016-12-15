@@ -6,41 +6,24 @@ import java.util.Scanner;
 
 public class Garaxe {
     private static int numeroCoches; // Numero de coches que están no garaxe nun instante
-    private static int capacidadeMaxima=5;
-    private String matricula; // Pilla o numero de matricula
+    private static final int CAPACIDADEMAXIMA=5;
     private final float PREZOMENOS3HORAS = 1.5f;
     private final float PREZOMAIS3HORAS = 0.2f;
-
+// Constructores
     public Garaxe() {}
-
-    public Garaxe(String matricula) {
-        this.matricula = matricula;
-    }   
+   
+    
 // Metodos de acceso
 
     public static int getCapacidadeMaxima() {
-        return capacidadeMaxima;
+        return CAPACIDADEMAXIMA;
     }
     public int getNumeroCoches() {
         return numeroCoches;
     }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
     
-//Metodos 
-    public String introduceMatricula(){
-        /*
-         * Metodo para escanear la matricula del coche.
-         */
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
-    }
+    
+//Metodos
     
     public boolean comprobaEspacio(){
         /*
@@ -50,8 +33,8 @@ public class Garaxe {
          * true - Si hay plazas disponibles
          * false - Si no hay plazas disponibles
          */
-        if(capacidadeMaxima>=(numeroCoches+1)){
-            System.out.println((capacidadeMaxima-numeroCoches+1)+"PRAZAS DISPOÑIBLES");
+        if(CAPACIDADEMAXIMA>=(numeroCoches+1)){
+            //System.out.println((CAPACIDADEMAXIMA-numeroCoches+1)+"PRAZAS DISPOÑIBLES");
             numeroCoches++;
             return true;
         }else{
@@ -78,13 +61,13 @@ public class Garaxe {
             System.out.println("Non pode retirar coches se non hai");
         numeroCoches--;
     }
-    public void factura (){
+    public void factura (  Coche coch, int tempo, int aPagar, int pago, int volta){
         System.out.println("FACTURA");
-        System.out.println("MATRICULA: "+matricula);
-        System.out.println("TEMPO:");
-        System.out.println("PRECIO:");
-        System.out.println("CARTOS RECIBIDOS:");
-        System.out.println("CARTOS DEVOLTOS:");
+        System.out.println("MATRICULA: "+coch.getMatricula());
+        System.out.println("TEMPO:"+tempo);
+        System.out.println("PRECIO:"+aPagar);
+        System.out.println("CARTOS RECIBIDOS:"+pago);
+        System.out.println("CARTOS DEVOLTOS:"+volta);
     }
     
 }
