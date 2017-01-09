@@ -3,6 +3,7 @@ package boletin12;
 
 import javax.swing.JOptionPane;
 
+//Añadiendo cambio para fork
 
 public class Boletin12 {
     public static boolean haiEspacio = true;
